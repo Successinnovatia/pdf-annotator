@@ -6,7 +6,8 @@ A single-page application (SPA) for uploading, viewing and Interacting with PDF 
 - **View PDFs**: Displays the first page responsively (work in progress for full responsiveness).
 - **Interact with pdf**: Underline, sign, add text to PDF(in progress)
 - **Export Pdf**: Download pdf with changes made (in progress)
-- **Deployment**: Live at .
+- **Deployment**: Live at https://pdf-annotator-application.vercel.app
+.
 
 ## Tech Stack
 - **Next.js**: Framework for SSR and client-side rendering.
