@@ -26,7 +26,14 @@ import {
   formatFileSize 
 } from '@/utils/pdf';
 
-pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+// Configure PDF.js worker with fallback
+try {
+  pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+} catch (error) {
+  console.warn('Failed to set PDF worker source, using default:', error);
+  // Fallback to CDN if local worker is not available
+  pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+}
 
 function PdfViewer({ onHighlightAdd, onHighlightRemove, initialHighlights = [] }: PdfViewerProps) {
   const [file, setFile] = useState<string | null>(null);

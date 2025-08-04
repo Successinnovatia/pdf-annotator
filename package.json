@@ -7,7 +7,7 @@
     "build": "npm run copy-worker && next build",
     "start": "next start",
     "lint": "next lint",
-    "copy-worker": "copy node_modules\\pdfjs-dist\\build\\pdf.worker.min.mjs public\\",
+    "copy-worker": "node scripts/copy-worker.js",
     "postinstall": "npm run copy-worker"
   },
   "dependencies": {
